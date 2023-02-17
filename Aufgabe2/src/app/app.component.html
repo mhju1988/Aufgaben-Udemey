@@ -1,0 +1,25 @@
+<h1>My solution1</h1>
+<label>Username </label>
+<input type="text"  [(ngModel)]= 'username'  (input)="isTheTextEmpty($event)" >
+<p>{{username}}</p>
+<button [disabled]="isTheFiledEmpty"  (click)="resetInput()" >save</button>
+
+<hr>
+<h1>My solution2   with *ngIf  -- Directives </h1>
+<h3>save button is not hidden like the other example , its not exist at all. It appears just when the if condition is true and in our case when the username not empty  </h3>
+<label>Username </label>
+<input type="text"  [(ngModel)]= 'username1'  >
+<p>{{username1}}</p>
+<button *ngIf="username1 != ''"  (click)="resetInput()" >save1</button>
+<!------------------------------------------------------------------------------->
+<hr>
+
+<h1>toturial solution</h1>
+
+<label>Username </label>
+<input type="text"  [(ngModel)]= 'username2'>
+<p>{{username2}}</p>
+<button [disabled]="username2 === ''" (click)="username2 = ''"  >Reset User</button>
+
+
+
